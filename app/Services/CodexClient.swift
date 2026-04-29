@@ -28,7 +28,7 @@ struct CodexClient {
 
     init(
         apiKey: String? = ProcessInfo.processInfo.environment["OPENAI_API_KEY"],
-        model: String = ProcessInfo.processInfo.environment["OPENAI_MODEL"] ?? "gpt-4.1-mini",
+        model: String = ProcessInfo.processInfo.environment["OPENAI_MODEL"] ?? "gpt-5.5",
         session: URLSession = .shared
     ) {
         self.apiKey = apiKey
@@ -277,7 +277,7 @@ struct CodexClient {
       } | null
     }
 
-    Coordinates must be pixel coordinates relative to the screenshot.
+    Coordinates must be pixel coordinates relative to the screenshot. Put each point at the visual center of the actual clickable or editable UI element, not on nearby text, labels, headings, divider lines, or explanatory copy. For text fields, point at the center of the input rectangle. For buttons, point at the center of the button.
     For checklist mode, checklist must contain a title and useful checklist items. For other modes, checklist can be null.
     If you are unsure, return an empty points array.
     Do not ask the user to share sensitive information with you, including passwords, credentials, payment details, private keys, payment card numbers, or one-time codes.

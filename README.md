@@ -2,7 +2,7 @@
 
 Codex Cursor is a macOS SwiftUI prototype for step-by-step help on any software screen.
 
-When the app is running, a small Codex icon stays beside your cursor. Hold `Option` anywhere to speak a question, then release `Option` to submit it. Codex Cursor transcribes the question, analyzes the current screen, speaks the next practical step aloud, and, when useful, draws a temporary pointer over the relevant screen location.
+When the app is running, a small Codex icon stays beside your cursor. Hold `Option` anywhere to speak a question, then release `Option` to submit it. Codex Cursor transcribes the question in a cursor-side bubble, analyzes the current screen, then shows and speaks the next practical step aloud.
 
 Example flow:
 
@@ -24,6 +24,30 @@ Build and launch as a normal macOS app bundle:
 OPENAI_API_KEY=your_key ./scripts/run-app.sh
 ```
 
+By default, screen understanding uses `gpt-5.5`. For a faster/cheaper demo mode, override it with `gpt-5.4-mini`:
+
+```bash
+OPENAI_API_KEY=your_key OPENAI_MODEL=gpt-5.4-mini ./scripts/run-app.sh
+```
+
+By default, spoken answers use the Realtime API with `gpt-realtime-1.5` and the `marin` voice. You can override the realtime voice/model:
+
+```bash
+OPENAI_API_KEY=your_key OPENAI_REALTIME_VOICE=cedar ./scripts/run-app.sh
+```
+
+To force the older OpenAI speech endpoint instead:
+
+```bash
+OPENAI_API_KEY=your_key CODEX_CURSOR_TTS_PROVIDER=tts OPENAI_TTS_VOICE=cedar ./scripts/run-app.sh
+```
+
+To force the built-in macOS voice fallback:
+
+```bash
+CODEX_CURSOR_TTS_PROVIDER=system ./scripts/run-app.sh
+```
+
 For a UI-only smoke test, you can omit `OPENAI_API_KEY`. The app will open, but model analysis will show a missing key error when you click `Ask About This Screen`.
 
 The command stays attached while the app is running. Close the app window or press `Control-C` in the terminal to stop it.
@@ -35,13 +59,14 @@ The first screenshot capture requires macOS screen recording permission. After g
 ```text
 Codex icon follows the cursor
 -> hold Option
--> icon expands into a "Listening" bubble
+-> icon expands into a cursor-side listening bubble
 -> speak a question
+-> transcript appears beside the cursor
 -> release Option
 -> app briefly hides its own UI and captures the current screen
+-> buddy shows "Thinking..."
 -> model returns one next step
--> answer is spoken aloud
--> app points to the relevant location
+-> answer appears beside the cursor and is spoken aloud
 -> user does it
 -> hold Option again for the next step
 ```
@@ -57,10 +82,10 @@ The cursor companion uses a Clicky-style overlay approach:
 one transparent full-screen overlay window per display
 -> each overlay tracks NSEvent.mouseLocation at 60fps
 -> only the overlay for the screen containing the cursor renders the Codex icon
--> pressing Option expands the icon into a short "Ask me" label
+-> pressing Option expands the icon into listening, thinking, answer, and speaking states
 ```
 
-This is intentionally different from moving a small app window around the screen. The overlay approach follows the cursor more smoothly across apps, spaces, and multiple monitors.
+This is intentionally different from moving a small app window around the screen. The overlay approach follows the cursor more smoothly across apps, spaces, full-screen app Spaces, and multiple monitors. The app runs with accessory/agent-style activation so the buddy can remain visible over full-screen apps.
 
 ## Build Only
 

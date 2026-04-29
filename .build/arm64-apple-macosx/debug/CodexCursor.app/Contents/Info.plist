@@ -20,9 +20,15 @@
     <string>1</string>
     <key>LSMinimumSystemVersion</key>
     <string>13.0</string>
+    <key>LSUIElement</key>
+    <true/>
     <key>NSHighResolutionCapable</key>
     <true/>
     <key>NSScreenCaptureDescription</key>
     <string>Codex Cursor captures your screen so it can explain the visible interface and suggest next steps.</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Codex Cursor uses your microphone for push-to-talk questions.</string>
+    <key>NSSpeechRecognitionUsageDescription</key>
+    <string>Codex Cursor uses speech recognition to turn your spoken question into text.</string>
 </dict>
 </plist>

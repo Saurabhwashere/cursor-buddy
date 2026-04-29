@@ -79,16 +79,6 @@ struct CompanionPanel: View {
             }
 
             HStack(spacing: 12) {
-                Button("Hide Pointer") {
-                    appState.hidePointerOverlay()
-                }
-                .disabled(!appState.isPointerOverlayVisible)
-
-                Button("Show Pointer Again") {
-                    appState.showPointerOverlayAgain()
-                }
-                .disabled(!appState.canShowPointerOverlay || appState.isPointerOverlayVisible)
-
                 Button("Create Guide") {
                     appState.createReusableGuide()
                 }

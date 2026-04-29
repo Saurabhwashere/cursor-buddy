@@ -24,6 +24,7 @@ final class AppState: ObservableObject {
     private let artifactService: ArtifactService
     private var hotkeyMonitor: HotkeyMonitor?
     private var pointerVisibilityTask: Task<Void, Never>?
+    private var speakingStateTask: Task<Void, Never>?
     private var recentTurns: [String] = []
 
     init(
@@ -104,18 +105,35 @@ final class AppState: ObservableObject {
         isListening = true
         errorMessage = nil
         spokenAnswerService.stop()
+        speakingStateTask?.cancel()
+        speakingStateTask = nil
         prompt = ""
         summonHint = "Listening. Release Option to ask Codex about this screen."
-        cursorCompanionController.showLabel(status: "Listening", isLoading: true, collapseAfter: 30)
+        cursorCompanionController.showAnswer(
+            title: "Listening",
+            text: "Speak now. Release Option when you're done.",
+            activity: .listening,
+            collapseAfter: nil
+        )
 
         Task {
             do {
                 try await voiceInputService.start { [weak self] transcript in
                     self?.prompt = transcript
+                    self?.cursorCompanionController.showAnswer(
+                        title: "Listening",
+                        text: transcript.isEmpty ? "Speak now. Release Option when you're done." : transcript,
+                        activity: .listening,
+                        collapseAfter: nil
+                    )
                 }
             } catch {
                 isListening = false
-                cursorCompanionController.showLabel(status: "Mic setup")
+                cursorCompanionController.showAnswer(
+                    title: "Mic setup",
+                    text: AppState.userFacingMessage(for: error),
+                    collapseAfter: 8
+                )
                 errorMessage = AppState.userFacingMessage(for: error)
             }
         }
@@ -133,13 +151,22 @@ final class AppState: ObservableObject {
         guard !spokenPrompt.isEmpty else {
             prompt = "What do I do next?"
             summonHint = "I did not catch that. Hold Option and try again."
-            cursorCompanionController.showLabel(status: "Try again")
+            cursorCompanionController.showAnswer(
+                title: "Try again",
+                text: "I did not catch that. Hold Option and ask once more.",
+                collapseAfter: 5
+            )
             return
         }
 
         prompt = spokenPrompt
         summonHint = "Got it. Codex is looking at the current screen."
-        cursorCompanionController.showLabel(status: "Got it", isLoading: true, collapseAfter: 2)
+        cursorCompanionController.showAnswer(
+            title: "Got it",
+            text: spokenPrompt,
+            activity: .thinking,
+            collapseAfter: nil
+        )
 
         Task {
             await captureAndAnalyze(speakAnswer: true)
@@ -155,8 +182,12 @@ final class AppState: ObservableObject {
 
         isLoading = true
         errorMessage = nil
-        hidePointerOverlay()
-        cursorCompanionController.showLabel(status: "Looking", isLoading: true, collapseAfter: 4)
+        cursorCompanionController.showAnswer(
+            title: "Looking",
+            text: "Checking the current screen...",
+            activity: .thinking,
+            collapseAfter: nil
+        )
         var hiddenCompanionWindow: NSWindow?
 
         do {
@@ -168,7 +199,12 @@ final class AppState: ObservableObject {
             restoreCompanionWindowAfterScreenshot(hiddenCompanionWindow)
             hiddenCompanionWindow = nil
             cursorCompanionController.showAfterScreenshot()
-            cursorCompanionController.showLabel(status: "Thinking", isLoading: true, collapseAfter: 4)
+            cursorCompanionController.showAnswer(
+                title: "Thinking",
+                text: "Working out the next step...",
+                activity: .thinking,
+                collapseAfter: nil
+            )
 
             let response = try await codexClient.analyzeScreen(
                 prompt: trimmedPrompt,
@@ -179,11 +215,16 @@ final class AppState: ObservableObject {
             latestResponse = response
             rememberTurn(question: trimmedPrompt, response: response)
             pendingArtifact = nil
-            canShowPointerOverlay = !response.points.isEmpty
-            showPointerOverlayIfNeeded(response: response, screenshot: screenshot)
-            cursorCompanionController.showLabel(status: response.points.isEmpty ? "Ready" : "Pointing")
+            canShowPointerOverlay = false
+            cursorCompanionController.showAnswer(
+                title: "Next step",
+                text: cursorDisplayText(for: response),
+                activity: speakAnswer ? .speaking : .idle,
+                collapseAfter: speakAnswer ? nil : 10
+            )
             if speakAnswer {
                 spokenAnswerService.speak(response)
+                scheduleSpeakingStateReset()
             }
         } catch {
             restoreCompanionWindowAfterScreenshot(hiddenCompanionWindow)
@@ -191,8 +232,12 @@ final class AppState: ObservableObject {
             canShowPointerOverlay = false
             hidePointerOverlay()
             cursorCompanionController.showAfterScreenshot()
-            cursorCompanionController.showLabel(status: "Needs setup")
             errorMessage = AppState.userFacingMessage(for: error)
+            cursorCompanionController.showAnswer(
+                title: "Needs setup",
+                text: AppState.userFacingMessage(for: error),
+                collapseAfter: 8
+            )
         }
 
         isLoading = false
@@ -206,18 +251,12 @@ final class AppState: ObservableObject {
     func hidePointerOverlay() {
         pointerVisibilityTask?.cancel()
         pointerVisibilityTask = nil
-        overlayController.hide()
         isPointerOverlayVisible = false
     }
 
     func showPointerOverlayAgain() {
-        guard let response = latestResponse,
-              let screenshot = latestScreenshot,
-              !response.points.isEmpty else {
-            return
-        }
-
-        showPointerOverlayIfNeeded(response: response, screenshot: screenshot)
+        canShowPointerOverlay = false
+        isPointerOverlayVisible = false
     }
 
     func copyChecklistToClipboard() {
@@ -292,21 +331,6 @@ final class AppState: ObservableObject {
         pendingArtifact = nil
     }
 
-    private func showPointerOverlayIfNeeded(response: ScreenAnalysisResponse, screenshot: CapturedScreenshot) {
-        guard !response.points.isEmpty else {
-            hidePointerOverlay()
-            return
-        }
-
-        overlayController.show(points: response.points, for: screenshot, timeoutSeconds: 30)
-        isPointerOverlayVisible = true
-        pointerVisibilityTask?.cancel()
-        pointerVisibilityTask = Task { @MainActor [weak self] in
-            try? await Task.sleep(nanoseconds: 30_000_000_000)
-            self?.markPointerOverlayHidden()
-        }
-    }
-
     private func markPointerOverlayHidden() {
         pointerVisibilityTask = nil
         isPointerOverlayVisible = false
@@ -332,6 +356,23 @@ final class AppState: ObservableObject {
 
         if recentTurns.count > 6 {
             recentTurns.removeFirst(recentTurns.count - 6)
+        }
+    }
+
+    private func cursorDisplayText(for response: ScreenAnalysisResponse) -> String {
+        if let firstStep = response.steps.first,
+           !firstStep.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            return firstStep
+        }
+
+        return response.answer
+    }
+
+    private func scheduleSpeakingStateReset() {
+        speakingStateTask?.cancel()
+        speakingStateTask = Task { @MainActor [weak self] in
+            try? await Task.sleep(nanoseconds: 18_000_000_000)
+            self?.cursorCompanionController.showIcon(status: "Ready")
         }
     }
 
