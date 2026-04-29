@@ -1,0 +1,138 @@
+{
+  "": {
+    "swift-dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/primary.swiftdeps"
+  },
+  "/Users/saurabhsingh/Desktop/codex-cursor/app/AppState.swift": {
+    "dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/AppState.d",
+    "object": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/AppState.swift.o",
+    "swiftmodule": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/AppState~partial.swiftmodule",
+    "swift-dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/AppState.swiftdeps",
+    "diagnostics": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/AppState.dia"
+  },
+  "/Users/saurabhsingh/Desktop/codex-cursor/app/CodexCursorApp.swift": {
+    "dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CodexCursorApp.d",
+    "object": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CodexCursorApp.swift.o",
+    "swiftmodule": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CodexCursorApp~partial.swiftmodule",
+    "swift-dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CodexCursorApp.swiftdeps",
+    "diagnostics": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CodexCursorApp.dia"
+  },
+  "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/GeneratedArtifact.swift": {
+    "dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/GeneratedArtifact.d",
+    "object": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/GeneratedArtifact.swift.o",
+    "swiftmodule": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/GeneratedArtifact~partial.swiftmodule",
+    "swift-dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/GeneratedArtifact.swiftdeps",
+    "diagnostics": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/GeneratedArtifact.dia"
+  },
+  "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/OverlayPoint.swift": {
+    "dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/OverlayPoint.d",
+    "object": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/OverlayPoint.swift.o",
+    "swiftmodule": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/OverlayPoint~partial.swiftmodule",
+    "swift-dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/OverlayPoint.swiftdeps",
+    "diagnostics": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/OverlayPoint.dia"
+  },
+  "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/ScreenAnalysisResponse.swift": {
+    "dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ScreenAnalysisResponse.d",
+    "object": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ScreenAnalysisResponse.swift.o",
+    "swiftmodule": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ScreenAnalysisResponse~partial.swiftmodule",
+    "swift-dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ScreenAnalysisResponse.swiftdeps",
+    "diagnostics": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ScreenAnalysisResponse.dia"
+  },
+  "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/ArtifactService.swift": {
+    "dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ArtifactService.d",
+    "object": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ArtifactService.swift.o",
+    "swiftmodule": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ArtifactService~partial.swiftmodule",
+    "swift-dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ArtifactService.swiftdeps",
+    "diagnostics": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ArtifactService.dia"
+  },
+  "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/CodexClient.swift": {
+    "dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CodexClient.d",
+    "object": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CodexClient.swift.o",
+    "swiftmodule": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CodexClient~partial.swiftmodule",
+    "swift-dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CodexClient.swiftdeps",
+    "diagnostics": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CodexClient.dia"
+  },
+  "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/CoordinateMapper.swift": {
+    "dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CoordinateMapper.d",
+    "object": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CoordinateMapper.swift.o",
+    "swiftmodule": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CoordinateMapper~partial.swiftmodule",
+    "swift-dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CoordinateMapper.swiftdeps",
+    "diagnostics": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CoordinateMapper.dia"
+  },
+  "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/CursorCompanionController.swift": {
+    "dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CursorCompanionController.d",
+    "object": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CursorCompanionController.swift.o",
+    "swiftmodule": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CursorCompanionController~partial.swiftmodule",
+    "swift-dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CursorCompanionController.swiftdeps",
+    "diagnostics": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CursorCompanionController.dia"
+  },
+  "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/HotkeyMonitor.swift": {
+    "dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/HotkeyMonitor.d",
+    "object": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/HotkeyMonitor.swift.o",
+    "swiftmodule": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/HotkeyMonitor~partial.swiftmodule",
+    "swift-dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/HotkeyMonitor.swiftdeps",
+    "diagnostics": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/HotkeyMonitor.dia"
+  },
+  "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/OverlayController.swift": {
+    "dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/OverlayController.d",
+    "object": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/OverlayController.swift.o",
+    "swiftmodule": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/OverlayController~partial.swiftmodule",
+    "swift-dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/OverlayController.swiftdeps",
+    "diagnostics": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/OverlayController.dia"
+  },
+  "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/ScreenshotService.swift": {
+    "dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ScreenshotService.d",
+    "object": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ScreenshotService.swift.o",
+    "swiftmodule": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ScreenshotService~partial.swiftmodule",
+    "swift-dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ScreenshotService.swiftdeps",
+    "diagnostics": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ScreenshotService.dia"
+  },
+  "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/SpokenAnswerService.swift": {
+    "dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/SpokenAnswerService.d",
+    "object": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/SpokenAnswerService.swift.o",
+    "swiftmodule": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/SpokenAnswerService~partial.swiftmodule",
+    "swift-dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/SpokenAnswerService.swiftdeps",
+    "diagnostics": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/SpokenAnswerService.dia"
+  },
+  "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/VoiceInputService.swift": {
+    "dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/VoiceInputService.d",
+    "object": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/VoiceInputService.swift.o",
+    "swiftmodule": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/VoiceInputService~partial.swiftmodule",
+    "swift-dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/VoiceInputService.swiftdeps",
+    "diagnostics": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/VoiceInputService.dia"
+  },
+  "/Users/saurabhsingh/Desktop/codex-cursor/app/Views/ArtifactPreviewView.swift": {
+    "dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ArtifactPreviewView.d",
+    "object": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ArtifactPreviewView.swift.o",
+    "swiftmodule": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ArtifactPreviewView~partial.swiftmodule",
+    "swift-dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ArtifactPreviewView.swiftdeps",
+    "diagnostics": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ArtifactPreviewView.dia"
+  },
+  "/Users/saurabhsingh/Desktop/codex-cursor/app/Views/CompanionPanel.swift": {
+    "dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CompanionPanel.d",
+    "object": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CompanionPanel.swift.o",
+    "swiftmodule": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CompanionPanel~partial.swiftmodule",
+    "swift-dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CompanionPanel.swiftdeps",
+    "diagnostics": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CompanionPanel.dia"
+  },
+  "/Users/saurabhsingh/Desktop/codex-cursor/app/Views/CursorCompanionBubble.swift": {
+    "dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CursorCompanionBubble.d",
+    "object": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CursorCompanionBubble.swift.o",
+    "swiftmodule": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CursorCompanionBubble~partial.swiftmodule",
+    "swift-dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CursorCompanionBubble.swiftdeps",
+    "diagnostics": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CursorCompanionBubble.dia"
+  },
+  "/Users/saurabhsingh/Desktop/codex-cursor/app/Views/PointerOverlay.swift": {
+    "dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/PointerOverlay.d",
+    "object": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/PointerOverlay.swift.o",
+    "swiftmodule": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/PointerOverlay~partial.swiftmodule",
+    "swift-dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/PointerOverlay.swiftdeps",
+    "diagnostics": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/PointerOverlay.dia"
+  },
+  "/Users/saurabhsingh/Desktop/codex-cursor/app/Views/ResponseView.swift": {
+    "dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ResponseView.d",
+    "object": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ResponseView.swift.o",
+    "swiftmodule": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ResponseView~partial.swiftmodule",
+    "swift-dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ResponseView.swiftdeps",
+    "diagnostics": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ResponseView.dia"
+  }
+}

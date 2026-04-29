@@ -1,0 +1,593 @@
+{
+  "builtTestProducts" : [
+
+  ],
+  "copyCommands" : {
+
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.CodexCursor-arm64-apple-macosx-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/sources",
+      "importPath" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/AppState.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/CodexCursorApp.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/GeneratedArtifact.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/OverlayPoint.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/ScreenAnalysisResponse.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/ArtifactService.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/CodexClient.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/CoordinateMapper.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/CursorCompanionController.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/HotkeyMonitor.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/OverlayController.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/ScreenshotService.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/SpokenAnswerService.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/VoiceInputService.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Views/ArtifactPreviewView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Views/CompanionPanel.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Views/CursorCompanionBubble.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Views/PointerOverlay.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Views/ResponseView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/sources"
+        }
+      ],
+      "isLibrary" : false,
+      "moduleName" : "CodexCursor",
+      "moduleOutputPath" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/Modules/CodexCursor.swiftmodule",
+      "objects" : [
+        "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/AppState.swift.o",
+        "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CodexCursorApp.swift.o",
+        "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/GeneratedArtifact.swift.o",
+        "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/OverlayPoint.swift.o",
+        "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ScreenAnalysisResponse.swift.o",
+        "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ArtifactService.swift.o",
+        "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CodexClient.swift.o",
+        "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CoordinateMapper.swift.o",
+        "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CursorCompanionController.swift.o",
+        "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/HotkeyMonitor.swift.o",
+        "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/OverlayController.swift.o",
+        "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ScreenshotService.swift.o",
+        "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/SpokenAnswerService.swift.o",
+        "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/VoiceInputService.swift.o",
+        "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ArtifactPreviewView.swift.o",
+        "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CompanionPanel.swift.o",
+        "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CursorCompanionBubble.swift.o",
+        "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/PointerOverlay.swift.o",
+        "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ResponseView.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx13.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j8",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-Xfrontend",
+        "-entry-point-function-name",
+        "-Xfrontend",
+        "CodexCursor_main",
+        "-swift-version",
+        "5",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.4.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.4.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "codex_cursor"
+      ],
+      "outputFileMapPath" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/AppState.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CodexCursorApp.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/GeneratedArtifact.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/OverlayPoint.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ScreenAnalysisResponse.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ArtifactService.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CodexClient.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CoordinateMapper.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CursorCompanionController.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/HotkeyMonitor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/OverlayController.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ScreenshotService.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/SpokenAnswerService.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/VoiceInputService.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ArtifactPreviewView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CompanionPanel.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CursorCompanionBubble.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/PointerOverlay.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ResponseView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/Modules/CodexCursor.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/saurabhsingh/Desktop/codex-cursor/app/AppState.swift",
+        "/Users/saurabhsingh/Desktop/codex-cursor/app/CodexCursorApp.swift",
+        "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/GeneratedArtifact.swift",
+        "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/OverlayPoint.swift",
+        "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/ScreenAnalysisResponse.swift",
+        "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/ArtifactService.swift",
+        "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/CodexClient.swift",
+        "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/CoordinateMapper.swift",
+        "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/CursorCompanionController.swift",
+        "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/HotkeyMonitor.swift",
+        "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/OverlayController.swift",
+        "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/ScreenshotService.swift",
+        "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/SpokenAnswerService.swift",
+        "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/VoiceInputService.swift",
+        "/Users/saurabhsingh/Desktop/codex-cursor/app/Views/ArtifactPreviewView.swift",
+        "/Users/saurabhsingh/Desktop/codex-cursor/app/Views/CompanionPanel.swift",
+        "/Users/saurabhsingh/Desktop/codex-cursor/app/Views/CursorCompanionBubble.swift",
+        "/Users/saurabhsingh/Desktop/codex-cursor/app/Views/PointerOverlay.swift",
+        "/Users/saurabhsingh/Desktop/codex-cursor/app/Views/ResponseView.swift"
+      ],
+      "tempsPath" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "CodexCursor" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "CodexCursor",
+      "-package-name",
+      "codex_cursor",
+      "-c",
+      "/Users/saurabhsingh/Desktop/codex-cursor/app/AppState.swift",
+      "/Users/saurabhsingh/Desktop/codex-cursor/app/CodexCursorApp.swift",
+      "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/GeneratedArtifact.swift",
+      "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/OverlayPoint.swift",
+      "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/ScreenAnalysisResponse.swift",
+      "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/ArtifactService.swift",
+      "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/CodexClient.swift",
+      "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/CoordinateMapper.swift",
+      "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/CursorCompanionController.swift",
+      "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/HotkeyMonitor.swift",
+      "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/OverlayController.swift",
+      "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/ScreenshotService.swift",
+      "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/SpokenAnswerService.swift",
+      "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/VoiceInputService.swift",
+      "/Users/saurabhsingh/Desktop/codex-cursor/app/Views/ArtifactPreviewView.swift",
+      "/Users/saurabhsingh/Desktop/codex-cursor/app/Views/CompanionPanel.swift",
+      "/Users/saurabhsingh/Desktop/codex-cursor/app/Views/CursorCompanionBubble.swift",
+      "/Users/saurabhsingh/Desktop/codex-cursor/app/Views/PointerOverlay.swift",
+      "/Users/saurabhsingh/Desktop/codex-cursor/app/Views/ResponseView.swift",
+      "-I",
+      "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx13.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j8",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-Xfrontend",
+      "-entry-point-function-name",
+      "-Xfrontend",
+      "CodexCursor_main",
+      "-swift-version",
+      "5",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.4.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.4.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "codex_cursor",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "CodexCursor" : [
+
+    ]
+  },
+  "testDiscoveryCommands" : {
+
+  },
+  "testEntryPointCommands" : {
+
+  },
+  "traitConfiguration" : {
+    "default" : {
+
+    }
+  },
+  "writeCommands" : {
+    "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor-entitlement.plist" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<entitlement-plist>"
+        },
+        {
+          "kind" : "virtual",
+          "name" : "<com.apple.security.get-task-allow>"
+        }
+      ],
+      "outputFilePath" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor-entitlement.plist"
+    },
+    "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/AppState.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/CodexCursorApp.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/GeneratedArtifact.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/OverlayPoint.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/ScreenAnalysisResponse.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/ArtifactService.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/CodexClient.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/CoordinateMapper.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/CursorCompanionController.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/HotkeyMonitor.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/OverlayController.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/ScreenshotService.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/SpokenAnswerService.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/VoiceInputService.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Views/ArtifactPreviewView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Views/CompanionPanel.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Views/CursorCompanionBubble.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Views/PointerOverlay.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Views/ResponseView.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/sources"
+    },
+    "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/AppState.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ArtifactPreviewView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ArtifactService.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CodexClient.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CodexCursorApp.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CompanionPanel.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CoordinateMapper.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CursorCompanionBubble.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CursorCompanionController.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/GeneratedArtifact.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/HotkeyMonitor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/OverlayController.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/OverlayPoint.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/PointerOverlay.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ResponseView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ScreenAnalysisResponse.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ScreenshotService.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/SpokenAnswerService.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/VoiceInputService.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.product/Objects.LinkFileList"
+    },
+    "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt" : {
+      "alwaysOutOfDate" : true,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<swift-get-version>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+        }
+      ],
+      "outputFilePath" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+    }
+  }
+}
