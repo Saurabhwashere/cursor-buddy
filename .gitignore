@@ -1,0 +1,35 @@
+# macOS
+.DS_Store
+._*
+
+# Swift Package Manager / build output
+.build/
+.swiftpm/
+DerivedData/
+*.xcuserdata/
+*.xcuserstate
+
+# Local secrets and environment
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Codex Cursor generated local artifacts
+generated-codex-tasks/
+generated-tools/
+
+# Runtime logs and temporary files
+*.log
+*.tmp
+*.temp
+
+# Local app bundles / archives
+*.app
+*.dSYM/
+*.xcarchive/
+
+# Editor noise
+.vscode/
+.idea/
