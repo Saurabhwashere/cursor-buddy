@@ -24,6 +24,11 @@
     <true/>
     <key>NSHighResolutionCapable</key>
     <true/>
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSAllowsLocalNetworking</key>
+        <true/>
+    </dict>
     <key>NSScreenCaptureDescription</key>
     <string>Codex Cursor captures your screen so it can explain the visible interface and suggest next steps.</string>
     <key>NSMicrophoneUsageDescription</key>

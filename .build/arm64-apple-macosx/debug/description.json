@@ -32,6 +32,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/CodexBridgeResult.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/GeneratedArtifact.swift"
         },
         {
@@ -40,11 +44,19 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/PermissionStatus.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/ScreenAnalysisResponse.swift"
         },
         {
           "kind" : "file",
           "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/ArtifactService.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/CodexBridgeClient.swift"
         },
         {
           "kind" : "file",
@@ -65,6 +77,10 @@
         {
           "kind" : "file",
           "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/OverlayController.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/PermissionStatusService.swift"
         },
         {
           "kind" : "file",
@@ -113,15 +129,19 @@
       "objects" : [
         "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/AppState.swift.o",
         "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CodexCursorApp.swift.o",
+        "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CodexBridgeResult.swift.o",
         "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/GeneratedArtifact.swift.o",
         "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/OverlayPoint.swift.o",
+        "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/PermissionStatus.swift.o",
         "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ScreenAnalysisResponse.swift.o",
         "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ArtifactService.swift.o",
+        "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CodexBridgeClient.swift.o",
         "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CodexClient.swift.o",
         "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CoordinateMapper.swift.o",
         "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CursorCompanionController.swift.o",
         "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/HotkeyMonitor.swift.o",
         "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/OverlayController.swift.o",
+        "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/PermissionStatusService.swift.o",
         "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ScreenshotService.swift.o",
         "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/SpokenAnswerService.swift.o",
         "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/VoiceInputService.swift.o",
@@ -193,6 +213,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CodexBridgeResult.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/GeneratedArtifact.swift.o"
         },
         {
@@ -201,11 +225,19 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/PermissionStatus.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ScreenAnalysisResponse.swift.o"
         },
         {
           "kind" : "file",
           "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ArtifactService.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CodexBridgeClient.swift.o"
         },
         {
           "kind" : "file",
@@ -226,6 +258,10 @@
         {
           "kind" : "file",
           "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/OverlayController.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/PermissionStatusService.swift.o"
         },
         {
           "kind" : "file",
@@ -268,15 +304,19 @@
       "sources" : [
         "/Users/saurabhsingh/Desktop/codex-cursor/app/AppState.swift",
         "/Users/saurabhsingh/Desktop/codex-cursor/app/CodexCursorApp.swift",
+        "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/CodexBridgeResult.swift",
         "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/GeneratedArtifact.swift",
         "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/OverlayPoint.swift",
+        "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/PermissionStatus.swift",
         "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/ScreenAnalysisResponse.swift",
         "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/ArtifactService.swift",
+        "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/CodexBridgeClient.swift",
         "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/CodexClient.swift",
         "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/CoordinateMapper.swift",
         "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/CursorCompanionController.swift",
         "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/HotkeyMonitor.swift",
         "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/OverlayController.swift",
+        "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/PermissionStatusService.swift",
         "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/ScreenshotService.swift",
         "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/SpokenAnswerService.swift",
         "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/VoiceInputService.swift",
@@ -303,15 +343,19 @@
       "-c",
       "/Users/saurabhsingh/Desktop/codex-cursor/app/AppState.swift",
       "/Users/saurabhsingh/Desktop/codex-cursor/app/CodexCursorApp.swift",
+      "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/CodexBridgeResult.swift",
       "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/GeneratedArtifact.swift",
       "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/OverlayPoint.swift",
+      "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/PermissionStatus.swift",
       "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/ScreenAnalysisResponse.swift",
       "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/ArtifactService.swift",
+      "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/CodexBridgeClient.swift",
       "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/CodexClient.swift",
       "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/CoordinateMapper.swift",
       "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/CursorCompanionController.swift",
       "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/HotkeyMonitor.swift",
       "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/OverlayController.swift",
+      "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/PermissionStatusService.swift",
       "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/ScreenshotService.swift",
       "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/SpokenAnswerService.swift",
       "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/VoiceInputService.swift",
@@ -422,6 +466,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/CodexBridgeResult.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/GeneratedArtifact.swift"
         },
         {
@@ -430,11 +478,19 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/PermissionStatus.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/ScreenAnalysisResponse.swift"
         },
         {
           "kind" : "file",
           "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/ArtifactService.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/CodexBridgeClient.swift"
         },
         {
           "kind" : "file",
@@ -455,6 +511,10 @@
         {
           "kind" : "file",
           "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/OverlayController.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/PermissionStatusService.swift"
         },
         {
           "kind" : "file",
@@ -512,6 +572,14 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CodexBridgeClient.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CodexBridgeResult.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CodexClient.swift.o"
         },
         {
@@ -549,6 +617,14 @@
         {
           "kind" : "file",
           "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/OverlayPoint.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/PermissionStatus.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/PermissionStatusService.swift.o"
         },
         {
           "kind" : "file",

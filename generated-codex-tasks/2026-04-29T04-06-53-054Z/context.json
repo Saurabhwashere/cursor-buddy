@@ -1,0 +1,16 @@
+{
+  "prompt": "Download all the list of places to my local",
+  "instruction": "Make this workflow repeatable. Create the safest useful artifact for it.",
+  "answer": "You’re on the Google results list—next, open the Print dialog so you can save the page as a PDF (or as an image) locally.",
+  "steps": [
+    "Press Cmd+P (Mac) or Ctrl+P (Windows) to open Print."
+  ],
+  "screenshotPath": "/var/folders/8b/75kzt11n1q57v4gl6fxfrlqc0000gn/T/codex-cursor-latest-screen-CEC1406C-B5EA-4B8B-9FA1-D4865776737E.jpg",
+  "riskWarnings": [],
+  "screen": {
+    "capturedHeight": 621,
+    "originalHeight": 2214,
+    "originalWidth": 3420,
+    "capturedWidth": 960
+  }
+}

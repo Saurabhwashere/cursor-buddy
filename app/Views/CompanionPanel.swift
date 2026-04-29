@@ -7,6 +7,7 @@ struct CompanionPanel: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 18) {
             header
+            statusPanel
 
             VStack(alignment: .leading, spacing: 8) {
                 HStack {
@@ -84,6 +85,21 @@ struct CompanionPanel: View {
                 }
                 .disabled(appState.latestResponse == nil || appState.isLoading)
 
+                Button {
+                    appState.makeLatestWorkflowRepeatable()
+                } label: {
+                    if appState.isCodexTaskRunning {
+                        HStack(spacing: 6) {
+                            ProgressView()
+                                .controlSize(.small)
+                            Text("Codex...")
+                        }
+                    } else {
+                        Text("Make Repeatable")
+                    }
+                }
+                .disabled(appState.isCodexTaskRunning || appState.isLoading)
+
                 Spacer()
 
                 if let screenshot = appState.latestScreenshot {
@@ -113,6 +129,31 @@ struct CompanionPanel: View {
                 Divider()
             }
 
+            if let bridgeResult = appState.latestCodexBridgeResult {
+                VStack(alignment: .leading, spacing: 8) {
+                    HStack {
+                        Text("Codex Task")
+                            .font(.headline)
+
+                        Spacer()
+
+                        if let workspace = bridgeResult.workspace {
+                            Text(workspace)
+                                .font(.caption.monospaced())
+                                .foregroundStyle(.secondary)
+                                .lineLimit(1)
+                                .truncationMode(.middle)
+                        }
+                    }
+
+                    Text(bridgeResult.finalMessage ?? "Codex task finished.")
+                        .font(.callout)
+                        .textSelection(.enabled)
+                }
+
+                Divider()
+            }
+
             ResponseView(
                 response: appState.latestResponse,
                 isLoading: appState.isLoading,
@@ -125,6 +166,7 @@ struct CompanionPanel: View {
         .padding(22)
         .onAppear {
             appState.startHotkeyMonitoring()
+            appState.refreshPermissionStatuses()
             isPromptFocused = true
         }
     }
@@ -137,6 +179,61 @@ struct CompanionPanel: View {
             Text("Press Option anywhere. Ask one question. Get the next step.")
                 .font(.callout)
                 .foregroundStyle(.secondary)
+        }
+    }
+
+    private var statusPanel: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            HStack(spacing: 8) {
+                ForEach(appState.permissionStatuses) { status in
+                    PermissionStatusChip(status: status)
+                }
+
+                Spacer()
+
+                Button("Refresh") {
+                    appState.refreshPermissionStatuses()
+                }
+                .font(.caption)
+            }
+
+            Text("Codex can guide you, but never say passwords, security codes, payment details, or private IDs aloud.")
+                .font(.caption)
+                .foregroundStyle(.secondary)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .padding(12)
+        .background(.quaternary.opacity(0.45), in: RoundedRectangle(cornerRadius: 10))
+    }
+}
+
+private struct PermissionStatusChip: View {
+    let status: PermissionStatus
+
+    var body: some View {
+        HStack(spacing: 5) {
+            Circle()
+                .fill(color)
+                .frame(width: 7, height: 7)
+
+            Text(status.title)
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(.primary)
+        }
+        .padding(.horizontal, 8)
+        .padding(.vertical, 5)
+        .background(.background.opacity(0.55), in: Capsule())
+        .help("\(status.title): \(status.state.title)")
+    }
+
+    private var color: Color {
+        switch status.state {
+        case .ready:
+            return .green
+        case .missing:
+            return .red
+        case .unknown:
+            return .orange
         }
     }
 }

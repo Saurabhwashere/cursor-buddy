@@ -16,6 +16,13 @@
     "swift-dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CodexCursorApp.swiftdeps",
     "diagnostics": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CodexCursorApp.dia"
   },
+  "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/CodexBridgeResult.swift": {
+    "dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CodexBridgeResult.d",
+    "object": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CodexBridgeResult.swift.o",
+    "swiftmodule": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CodexBridgeResult~partial.swiftmodule",
+    "swift-dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CodexBridgeResult.swiftdeps",
+    "diagnostics": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CodexBridgeResult.dia"
+  },
   "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/GeneratedArtifact.swift": {
     "dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/GeneratedArtifact.d",
     "object": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/GeneratedArtifact.swift.o",
@@ -30,6 +37,13 @@
     "swift-dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/OverlayPoint.swiftdeps",
     "diagnostics": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/OverlayPoint.dia"
   },
+  "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/PermissionStatus.swift": {
+    "dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/PermissionStatus.d",
+    "object": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/PermissionStatus.swift.o",
+    "swiftmodule": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/PermissionStatus~partial.swiftmodule",
+    "swift-dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/PermissionStatus.swiftdeps",
+    "diagnostics": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/PermissionStatus.dia"
+  },
   "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/ScreenAnalysisResponse.swift": {
     "dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ScreenAnalysisResponse.d",
     "object": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ScreenAnalysisResponse.swift.o",
@@ -43,6 +57,13 @@
     "swiftmodule": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ArtifactService~partial.swiftmodule",
     "swift-dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ArtifactService.swiftdeps",
     "diagnostics": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ArtifactService.dia"
+  },
+  "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/CodexBridgeClient.swift": {
+    "dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CodexBridgeClient.d",
+    "object": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CodexBridgeClient.swift.o",
+    "swiftmodule": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CodexBridgeClient~partial.swiftmodule",
+    "swift-dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CodexBridgeClient.swiftdeps",
+    "diagnostics": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CodexBridgeClient.dia"
   },
   "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/CodexClient.swift": {
     "dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CodexClient.d",
@@ -78,6 +99,13 @@
     "swiftmodule": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/OverlayController~partial.swiftmodule",
     "swift-dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/OverlayController.swiftdeps",
     "diagnostics": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/OverlayController.dia"
+  },
+  "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/PermissionStatusService.swift": {
+    "dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/PermissionStatusService.d",
+    "object": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/PermissionStatusService.swift.o",
+    "swiftmodule": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/PermissionStatusService~partial.swiftmodule",
+    "swift-dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/PermissionStatusService.swiftdeps",
+    "diagnostics": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/PermissionStatusService.dia"
   },
   "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/ScreenshotService.swift": {
     "dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ScreenshotService.d",

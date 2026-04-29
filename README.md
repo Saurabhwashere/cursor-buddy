@@ -18,7 +18,13 @@ Codex Cursor: Use the official login form on this page. Keep your password and s
 
 ## Run
 
-Build and launch as a normal macOS app bundle:
+Start the optional Codex Bridge in one terminal if you want `Make Repeatable` to create local artifacts with Codex CLI:
+
+```bash
+./scripts/run-bridge.sh
+```
+
+Build and launch the macOS app in another terminal:
 
 ```bash
 OPENAI_API_KEY=your_key ./scripts/run-app.sh
@@ -59,6 +65,21 @@ For a UI-only smoke test, you can omit `OPENAI_API_KEY`. The app will open, but 
 The command stays attached while the app is running. Close the app window or press `Control-C` in the terminal to stop it.
 
 The first screenshot capture requires macOS screen recording permission. After granting permission in System Settings, reopen the app.
+The panel shows status chips for API key, screen recording, microphone, and speech recognition so demo setup issues are visible.
+
+Privacy note: Codex can guide you, but never say passwords, security codes, payment details, or private IDs aloud.
+
+## Codex Bridge
+
+The `Make Repeatable` button sends the latest screen prompt, answer, and screenshot path to a local bridge at `http://127.0.0.1:8765`.
+The bridge runs `codex exec` in a generated workspace under `generated-codex-tasks/` and asks Codex to create a safe reusable artifact such as a guide, script, helper app, or MCP server scaffold.
+
+Bridge defaults:
+
+```bash
+CODEX_CURSOR_CODEX_MODEL=gpt-5.4-mini
+CODEX_CURSOR_BRIDGE_PORT=8765
+```
 
 ## Current MVP Loop
 

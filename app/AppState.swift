@@ -12,11 +12,16 @@ final class AppState: ObservableObject {
     @Published var isPointerOverlayVisible = false
     @Published var canShowPointerOverlay = false
     @Published var pendingArtifact: GeneratedArtifact?
+    @Published var latestCodexBridgeResult: CodexBridgeResult?
+    @Published var isCodexTaskRunning = false
     @Published var errorMessage: String?
     @Published var summonHint = "Press Option to ask Codex Cursor about the current screen."
+    @Published var permissionStatuses: [PermissionStatus] = []
 
     private let screenshotService: ScreenshotService
+    private let permissionStatusService: PermissionStatusService
     private let codexClient: CodexClient
+    private let codexBridgeClient: CodexBridgeClient
     private let overlayController: OverlayController
     private let cursorCompanionController: CursorCompanionController
     private let voiceInputService: VoiceInputService
@@ -29,7 +34,9 @@ final class AppState: ObservableObject {
 
     init(
         screenshotService: ScreenshotService = ScreenshotService(),
+        permissionStatusService: PermissionStatusService = PermissionStatusService(),
         codexClient: CodexClient = CodexClient(),
+        codexBridgeClient: CodexBridgeClient = CodexBridgeClient(),
         artifactService: ArtifactService = ArtifactService(),
         overlayController: OverlayController? = nil,
         cursorCompanionController: CursorCompanionController? = nil,
@@ -37,12 +44,15 @@ final class AppState: ObservableObject {
         spokenAnswerService: SpokenAnswerService? = nil
     ) {
         self.screenshotService = screenshotService
+        self.permissionStatusService = permissionStatusService
         self.codexClient = codexClient
+        self.codexBridgeClient = codexBridgeClient
         self.artifactService = artifactService
         self.overlayController = overlayController ?? OverlayController()
         self.cursorCompanionController = cursorCompanionController ?? CursorCompanionController()
         self.voiceInputService = voiceInputService
         self.spokenAnswerService = spokenAnswerService ?? SpokenAnswerService()
+        refreshPermissionStatuses()
     }
 
     func startHotkeyMonitoring() {
@@ -61,6 +71,11 @@ final class AppState: ObservableObject {
         hotkeyMonitor = monitor
         monitor.start()
         cursorCompanionController.start()
+        refreshPermissionStatuses()
+    }
+
+    func refreshPermissionStatuses() {
+        permissionStatuses = permissionStatusService.currentStatuses()
     }
 
     func summonBesideCursor() {
@@ -129,6 +144,7 @@ final class AppState: ObservableObject {
                 }
             } catch {
                 isListening = false
+                refreshPermissionStatuses()
                 cursorCompanionController.showAnswer(
                     title: "Mic setup",
                     text: AppState.userFacingMessage(for: error),
@@ -228,6 +244,7 @@ final class AppState: ObservableObject {
             }
         } catch {
             restoreCompanionWindowAfterScreenshot(hiddenCompanionWindow)
+            refreshPermissionStatuses()
             latestResponse = nil
             canShowPointerOverlay = false
             hidePointerOverlay()
@@ -301,6 +318,53 @@ final class AppState: ObservableObject {
             response: latestResponse
         )
         errorMessage = nil
+    }
+
+    func makeLatestWorkflowRepeatable() {
+        guard !isCodexTaskRunning else {
+            return
+        }
+
+        guard latestResponse != nil || latestScreenshot != nil else {
+            errorMessage = "Ask about a screen before sending work to Codex."
+            return
+        }
+
+        isCodexTaskRunning = true
+        latestCodexBridgeResult = nil
+        errorMessage = nil
+        cursorCompanionController.showAnswer(
+            title: "Codex is building",
+            text: "Turning this workflow into a reusable local artifact...",
+            activity: .thinking,
+            collapseAfter: nil
+        )
+
+        Task {
+            do {
+                let result = try await codexBridgeClient.makeRepeatable(
+                    instruction: "Make this workflow repeatable. Create the safest useful artifact for it.",
+                    prompt: prompt,
+                    response: latestResponse,
+                    screenshot: latestScreenshot
+                )
+                latestCodexBridgeResult = result
+                cursorCompanionController.showAnswer(
+                    title: "Codex finished",
+                    text: result.finalMessage ?? "Task completed.",
+                    collapseAfter: 14
+                )
+            } catch {
+                errorMessage = AppState.userFacingMessage(for: error)
+                cursorCompanionController.showAnswer(
+                    title: "Bridge setup",
+                    text: AppState.userFacingMessage(for: error),
+                    collapseAfter: 10
+                )
+            }
+
+            isCodexTaskRunning = false
+        }
     }
 
     func copyPendingArtifact() {
