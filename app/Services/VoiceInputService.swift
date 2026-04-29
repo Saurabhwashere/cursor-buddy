@@ -13,7 +13,7 @@ enum VoiceInputError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .speechPermissionDenied:
-            return "Speech recognition permission is required. Enable it in System Settings, then relaunch Codex Cursor."
+            return "Speech recognition permission is required. Enable it in System Settings, then relaunch AI Cursor Buddy."
         case .microphonePermissionDenied:
             return "Microphone permission is required to use push-to-talk."
         case .recognizerUnavailable:

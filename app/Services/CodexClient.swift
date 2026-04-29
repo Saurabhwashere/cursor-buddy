@@ -160,7 +160,7 @@ struct CodexClient {
             answer: cleanedText,
             steps: [],
             points: [],
-            riskWarnings: ["The model response was not valid JSON, so Codex Cursor is showing it as plain text."]
+            riskWarnings: ["The model response was not valid JSON, so AI Cursor Buddy is showing it as plain text."]
         ))
     }
 
@@ -254,7 +254,7 @@ struct CodexClient {
     }
 
     private static let systemPrompt = """
-    You are Codex Cursor, a screen-aware assistant.
+    You are AI Cursor Buddy, a screen-aware assistant.
 
     The product lives beside the user's cursor. The user presses Option, asks a short question, follows your guidance, then presses Option again for the next step.
 

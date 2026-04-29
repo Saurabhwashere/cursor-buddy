@@ -1,184 +1,397 @@
-# Codex Cursor
+# AI Cursor Buddy
 
-Codex Cursor is a macOS SwiftUI prototype for step-by-step help on any software screen.
+AI Cursor Buddy is a macOS AI companion that lives beside your cursor and helps people use websites and apps one safe step at a time.
 
-When the app is running, a small Codex icon stays beside your cursor. Hold `Option` anywhere to speak a question, then release `Option` to submit it. Codex Cursor transcribes the question in a cursor-side bubble, analyzes the current screen, then shows and speaks the next practical step aloud.
+It is designed for people who can feel overwhelmed by software: older adults, people with learning disabilities, people who are less confident with computers, or anyone who wants patient help while navigating a screen.
 
-Example flow:
+Hold `Option`, ask a question, and release. AI Cursor Buddy looks at the current screen, answers aloud, and can also do small low-risk Mac actions such as taking screenshots, copying URLs, saving page notes, and revealing files.
+
+## What It Does
 
 ```text
-User presses Option.
-User: How do I log into myGov?
-Codex Cursor: Click the Sign in button in the top right.
+User: How do I search for a video on YouTube?
+AI Cursor Buddy: Click the search box at the top of the page.
 
-User clicks it, presses Option again.
-User: Okay, what now?
-Codex Cursor: Use the official login form on this page. Keep your password and security codes private.
+User: I did that. What now?
+AI Cursor Buddy: Type what you want to watch, then press Return.
+
+User: Take a screenshot.
+AI Cursor Buddy: Done. I saved the screenshot to your Desktop.
+
+User: Where is it?
+AI Cursor Buddy: I saved it here: /Users/.../Desktop/codex-cursor-screenshot.png
 ```
 
-## Run
+Core capabilities:
 
-Start the optional Codex Bridge in one terminal if you want `Make Repeatable` or `Run with Codex` to create local artifacts with Codex CLI:
+- Cursor-side voice companion that follows the mouse across apps, Spaces, full-screen windows, and monitors.
+- Screen-aware step-by-step guidance from screenshots.
+- Plain-English explanations and risk checks.
+- Spoken answers with a compact `Speaking...` cursor bubble.
+- Local task memory for follow-ups like `Where is it?`, `Open it`, `Try again`, and `Did it work?`.
+- Direct low-risk Mac actions.
+- Optional Codex CLI bridge for heavier work such as scripts, workflows, guides, and MCP scaffolds.
+
+## Architecture
+
+```text
+Push-to-talk voice
+-> Apple Speech transcript
+-> ActionRouter
+   -> memory follow-up
+   -> low-risk Mac/browser action
+   -> screen guidance
+   -> risk check
+   -> automation offer
+   -> Codex action
+-> response shown beside cursor and/or in the main panel
+-> task memory updated
+```
+
+### macOS App
+
+The app is a SwiftPM macOS SwiftUI executable in `app/`.
+
+Important pieces:
+
+- `AppState.swift`: coordinates voice, screenshots, routing, model calls, memory, and bridge actions.
+- `ActionRouter.swift`: fast deterministic local router. It decides whether a request should go to memory, Mac action, Codex action, risk check, automation offer, or screen guidance.
+- `CursorCompanionController.swift`: creates transparent overlay windows that keep the buddy next to the cursor.
+- `VoiceInputService.swift`: push-to-talk microphone capture and Apple Speech recognition.
+- `CodexClient.swift`: screen understanding through the OpenAI Responses API.
+- `SpokenAnswerService.swift`: spoken answers through Realtime API, OpenAI TTS fallback, or macOS system voice.
+- `InteractionMemoryStore.swift`: local JSON task ledger for follow-up questions.
+
+### Cursor Overlay
+
+AI Cursor Buddy uses one transparent `NSPanel` per display:
+
+```text
+one overlay window per screen
+-> tracks NSEvent.mouseLocation
+-> renders the buddy only on the screen containing the cursor
+-> supports full-screen app Spaces
+```
+
+This is why the buddy can remain visible next to the cursor instead of behaving like a normal app window.
+
+### Action Router
+
+The app does not call a model for every routing decision. It first uses a fast local `ActionRouter`.
+
+Examples:
+
+```text
+"Take a screenshot"                 -> Mac action
+"Copy this page URL"                -> browser/Mac action
+"Where is it?"                      -> memory lookup
+"Open it"                           -> reveal latest artifact in Finder
+"Create a Python script..."         -> Codex action
+"How do I save this page..."        -> offer Codex automation or give steps
+"Is this safe?"                     -> risk check
+"What do I do next?"                -> screen guidance
+```
+
+This keeps common interactions quick and only wakes Codex when the task needs code, files, or a heavier workflow.
+
+### Codex Bridge
+
+The optional bridge is a local Node server in `bridge/server.mjs`.
+
+It listens on:
+
+```text
+http://127.0.0.1:8765
+```
+
+The bridge can:
+
+- Run `codex exec` in a generated workspace.
+- Create scripts, guides, helper apps, or MCP server scaffolds.
+- Perform a small set of low-risk local actions.
+- Save audit metadata for each action.
+
+Generated Codex workspaces are written to:
+
+```text
+generated-codex-tasks/
+```
+
+Local task memory is written to:
+
+```text
+generated-tools/memory/interaction-memory.json
+```
+
+These folders are ignored by Git.
+
+## Models Used
+
+### Screen Understanding
+
+Default:
+
+```text
+gpt-5.4-nano
+```
+
+Used by `CodexClient` through the OpenAI Responses API. It receives:
+
+- the user's question,
+- compressed screenshot data,
+- the selected mode,
+- recent task memory.
+
+Override:
+
+```bash
+OPENAI_MODEL=gpt-5.5
+```
+
+### Spoken Answers
+
+Default:
+
+```text
+gpt-realtime-1.5
+voice: marin
+```
+
+Used by `SpokenAnswerService` for natural spoken responses.
+
+Fallback options:
+
+- OpenAI TTS endpoint with `gpt-4o-mini-tts`.
+- macOS system voice.
+
+### Codex Bridge
+
+Default:
+
+```text
+gpt-5.4-mini
+```
+
+Used by the Codex CLI bridge for generated scripts, guides, workflows, and MCP scaffolds.
+
+Override:
+
+```bash
+CODEX_CURSOR_CODEX_MODEL=gpt-5.5
+```
+
+### Speech To Text
+
+Push-to-talk currently uses Apple's `SFSpeechRecognizer`.
+
+## Requirements
+
+- macOS 13 or newer.
+- Xcode command line tools / Swift toolchain.
+- Node.js for the optional bridge.
+- Codex CLI installed and authenticated if you want `Run with Codex` or `Make Repeatable`.
+- OpenAI API key for real screen analysis and spoken OpenAI voices.
+
+Install/check basics:
+
+```bash
+xcode-select --install
+node --version
+swift --version
+codex --version
+```
+
+## Setup
+
+Clone the repo:
+
+```bash
+git clone <your-repo-url>
+cd codex-cursor
+```
+
+Set your OpenAI API key:
+
+```bash
+export OPENAI_API_KEY=your_key_here
+```
+
+Start the optional Codex Bridge in one terminal:
 
 ```bash
 ./scripts/run-bridge.sh
 ```
 
-Build and launch the macOS app in another terminal:
+Start the macOS app in another terminal:
 
 ```bash
-OPENAI_API_KEY=your_key ./scripts/run-app.sh
+OPENAI_API_KEY=your_key_here ./scripts/run-app.sh
 ```
 
-By default, screen understanding uses `gpt-5.4-nano` for low latency. For stronger reasoning, override it with `gpt-5.5`:
+For a UI-only smoke test, you can omit `OPENAI_API_KEY`. The app will open, but screen analysis will show a setup error when you ask about a real screen.
 
-```bash
-OPENAI_API_KEY=your_key OPENAI_MODEL=gpt-5.5 ./scripts/run-app.sh
-```
+## Permissions
 
-Screenshots are downscaled to a max dimension of `1280px` and sent as JPEG for speed. You can tune this:
+macOS may ask for:
 
-```bash
-OPENAI_API_KEY=your_key CODEX_CURSOR_MAX_SCREENSHOT_DIMENSION=960 ./scripts/run-app.sh
-```
+- **Screen Recording**: required for screenshot-based screen understanding.
+- **Microphone**: required for push-to-talk.
+- **Speech Recognition**: required for Apple Speech transcription.
+- **Accessibility / Automation**: needed for some browser actions, especially Firefox URL reading.
 
-By default, spoken answers use the Realtime API with `gpt-realtime-1.5` and the `marin` voice. You can override the realtime voice/model:
+After granting permissions, quit and relaunch the app.
 
-```bash
-OPENAI_API_KEY=your_key OPENAI_REALTIME_VOICE=cedar ./scripts/run-app.sh
-```
+The app panel includes setup status chips for API key, screen recording, microphone, and speech recognition.
 
-To force the older OpenAI speech endpoint instead:
+## How To Use
 
-```bash
-OPENAI_API_KEY=your_key CODEX_CURSOR_TTS_PROVIDER=tts OPENAI_TTS_VOICE=cedar ./scripts/run-app.sh
-```
+1. Launch the bridge if you want Codex actions.
+2. Launch the app.
+3. Move to any website or app.
+4. Hold `Option`.
+5. Ask one question.
+6. Release `Option`.
 
-To force the built-in macOS voice fallback:
-
-```bash
-CODEX_CURSOR_TTS_PROVIDER=system ./scripts/run-app.sh
-```
-
-For a UI-only smoke test, you can omit `OPENAI_API_KEY`. The app will open, but model analysis will show a missing key error when you click `Ask About This Screen`.
-
-The command stays attached while the app is running. Close the app window or press `Control-C` in the terminal to stop it.
-
-The first screenshot capture requires macOS screen recording permission. After granting permission in System Settings, reopen the app.
-The panel shows status chips for API key, screen recording, microphone, and speech recognition so demo setup issues are visible.
-
-Privacy note: Codex can guide you, but never say passwords, security codes, payment details, or private IDs aloud.
-
-## Action Router
-
-Codex Cursor uses a deterministic local `ActionRouter` before it calls any model. This keeps cursor-side responses fast:
+Useful prompts:
 
 ```text
-voice transcript
--> local route: memory, Mac action, Codex action, risk check, automation offer, or screen guidance
--> run the smallest useful agent/action
+What do I do next?
+How do I search for a video on YouTube?
+I did that. What now?
+Explain this page simply.
+Is this safe?
+Take a screenshot.
+Where is it?
+Open it.
+Copy this page URL.
+What page am I on?
+Save this page as Markdown notes.
+Create a folder called "Receipts" on my Desktop.
+Create a Python script to scrape this page.
+Use Codex to create a simple guide for searching YouTube.
 ```
 
-Codex is only invoked for heavier work such as scripts, workflows, MCP scaffolds, and explicit `use Codex` requests. Low-risk Mac actions such as screenshots, URL copy, current-page info, and Finder reveal stay local.
+## Modes
 
-## Codex Bridge
+The main panel supports four guidance modes:
 
-The `Make Repeatable` button sends the latest screen prompt, answer, and screenshot path to a local bridge at `http://127.0.0.1:8765`.
-The bridge runs `codex exec` in a generated workspace under `generated-codex-tasks/` and asks Codex to create a safe reusable artifact such as a guide, script, helper app, or MCP server scaffold.
+- **Next Step**: one immediate practical action.
+- **Explain**: plain-English explanation.
+- **Checklist**: reusable checklist.
+- **Risk Check**: trust, safety, official URLs, and sensitive-data warnings.
 
-`Run with Codex` sends the current prompt and screen directly to Codex as an action task. Voice commands that include phrases like `use Codex`, `run Codex`, or `ask Codex to` automatically use this path. The bridge tags action tasks with a profile such as `browser`, `mcp`, `files`, or `mac` so Codex can prepare the right artifact.
+## Direct Actions
 
-Example:
+The bridge currently implements these direct low-risk actions:
+
+- Take screenshot to Desktop.
+- Save current browser page to Desktop as HTML or `.webloc`.
+- Save current browser page as Markdown notes.
+- Copy current browser URL.
+- Report current browser page title and URL.
+- Create a folder on Desktop.
+- Reveal the latest saved file in Finder.
+
+Browser support currently targets:
+
+- Safari
+- Firefox
+- Google Chrome
+- Microsoft Edge
+- Brave Browser
+
+The bridge is intentionally conservative. It should fail rather than silently use the wrong browser.
+
+## Codex Actions
+
+Use Codex for heavier work:
 
 ```text
-User: Use Codex to use browser control and print this page.
-Codex Cursor: Running Codex...
-Codex Bridge: creates a safe browser-control/print helper or runbook under generated-codex-tasks/<task-id>/.
+Create a Python script to scrape this page.
+Use Codex to make this workflow repeatable.
+Use Codex to create a simple guide for searching YouTube.
+Use Codex to scaffold an MCP server for this workflow.
 ```
 
-Safety rule: Codex Cursor should prepare browser, print, submit, account, and OS-control actions, but it stops before irreversible final actions until the user confirms.
-
-One browser action is implemented as a real bridge action for demos:
+Codex actions run in generated workspaces under:
 
 ```text
-User: Use Codex to save this webpage to my desktop.
-Codex Cursor: saves the front Safari/Chrome/Edge/Brave page as an HTML file on Desktop.
+generated-codex-tasks/<task-id>/
 ```
 
-If the page cannot be fetched directly, the bridge saves a `.webloc` shortcut on Desktop instead.
+The bridge asks Codex to keep generated code and docs inside that workspace.
 
-One Mac action is also implemented as a real bridge action:
-
-```text
-User: Take a screenshot.
-Codex Cursor: saves a PNG screenshot to Desktop and remembers the path.
-```
-
-Other low-risk direct actions:
-
-```text
-User: What page am I on?
-Codex Cursor: reads the current browser title and URL.
-
-User: Copy this page URL.
-Codex Cursor: copies the current browser URL to the clipboard.
-
-User: Save this page as Markdown notes.
-Codex Cursor: saves a .md file on Desktop and remembers the path.
-
-User: Create a folder called "Receipts" on my Desktop.
-Codex Cursor: creates the Desktop folder and remembers the path.
-```
-
-Script/code creation requests such as `Create a Python script to scrape this page` are routed to Codex with the `files` profile so Codex creates the script in a generated workspace instead of trying to control the browser directly.
-
-Codex Cursor also keeps a small local task memory at `generated-tools/memory/interaction-memory.json`.
-This lets follow-ups such as `Where do I find it?`, `I can't see it`, `Did it work?`, `Open it`, and `Try again` refer to the last Codex action instead of starting a fresh screen-analysis answer.
-
-Bridge defaults:
+## Environment Variables
 
 ```bash
-CODEX_CURSOR_CODEX_MODEL=gpt-5.4-mini
+# Required for real model calls
+OPENAI_API_KEY=...
+
+# Screen understanding model
+OPENAI_MODEL=gpt-5.4-nano
+
+# Max screenshot dimension before upload
+CODEX_CURSOR_MAX_SCREENSHOT_DIMENSION=1280
+
+# Spoken response provider: realtime, tts, or system
+CODEX_CURSOR_TTS_PROVIDER=realtime
+
+# Realtime speech
+OPENAI_REALTIME_MODEL=gpt-realtime-1.5
+OPENAI_REALTIME_VOICE=marin
+
+# OpenAI TTS fallback
+OPENAI_TTS_MODEL=gpt-4o-mini-tts
+OPENAI_TTS_VOICE=marin
+
+# Codex bridge
 CODEX_CURSOR_BRIDGE_PORT=8765
+CODEX_CURSOR_BRIDGE_URL=http://127.0.0.1:8765/codex-task
+CODEX_CURSOR_CODEX_MODEL=gpt-5.4-mini
+CODEX_BINARY=codex
 ```
-
-## Current MVP Loop
-
-```text
-Codex icon follows the cursor
--> hold Option
--> icon expands into a cursor-side listening bubble
--> speak a question
--> transcript appears beside the cursor
--> release Option
--> app briefly hides its own UI and captures the current screen
--> buddy shows "Thinking..."
--> model returns one next step
--> answer appears beside the cursor and is spoken aloud
--> user does it
--> hold Option again for the next step
-```
-
-Checklist mode can still copy generated checklist Markdown to the clipboard or export it under `generated-tools/checklists`.
-Use `Create Guide` after an analysis to preview a reusable Markdown guide, then save it with a manifest under `generated-tools/guides`. This is a stretch feature; the main demo should focus on the cursor-adjacent next-step loop.
-
-## Cursor Companion Architecture
-
-The cursor companion uses a Clicky-style overlay approach:
-
-```text
-one transparent full-screen overlay window per display
--> each overlay tracks NSEvent.mouseLocation at 60fps
--> only the overlay for the screen containing the cursor renders the Codex icon
--> pressing Option expands the icon into listening, thinking, answer, and speaking states
-```
-
-This is intentionally different from moving a small app window around the screen. The overlay approach follows the cursor more smoothly across apps, spaces, full-screen app Spaces, and multiple monitors. The app runs with accessory/agent-style activation so the buddy can remain visible over full-screen apps.
 
 ## Build Only
+
+Compile without launching:
 
 ```bash
 swift build
 ```
 
-`swift build` only compiles the executable. It does not open the app window.
+Build and launch:
+
+```bash
+./scripts/run-app.sh
+```
+
+## Privacy And Safety
+
+AI Cursor Buddy is intended to guide and assist, not to handle secrets.
+
+Do not say passwords, one-time codes, payment details, private IDs, or health information aloud.
+
+The current prototype:
+
+- captures screenshots for screen analysis,
+- stores local task memory in `generated-tools/memory`,
+- stores generated Codex artifacts in `generated-codex-tasks`,
+- keeps direct actions intentionally narrow.
+
+High-risk actions such as submitting forms, deleting files, printing, sending messages, purchases, or account changes should require explicit confirmation before execution.
+
+## Demo Story
+
+Recommended demo arc:
+
+1. Open YouTube.
+2. Ask: `How do I search for a video on YouTube?`
+3. Follow the next step.
+4. Ask: `I did that. What now?`
+5. Ask: `Explain this page simply.`
+6. Ask: `Take a screenshot.`
+7. Ask: `Where is it?`
+8. Ask: `Open it.`
+9. Ask: `Use Codex to create a simple guide for searching YouTube.`
+
+This shows the core loop: understand, guide, act, remember, and extend through Codex.

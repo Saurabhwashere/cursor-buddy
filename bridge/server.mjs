@@ -36,7 +36,7 @@ const server = http.createServer(async (request, response) => {
 });
 
 server.listen(port, "127.0.0.1", () => {
-  console.log(`Codex Cursor bridge listening at http://127.0.0.1:${port}`);
+  console.log(`AI Cursor Buddy bridge listening at http://127.0.0.1:${port}`);
 });
 
 async function runCodexTask(body) {
@@ -345,7 +345,7 @@ async function maybeRunDesktopFolderAction(text, workspace, taskId) {
   }
 
   const desktopDir = path.join(homedir(), "Desktop");
-  const requestedName = extractQuotedName(text) || "Codex Cursor Folder";
+  const requestedName = extractQuotedName(text) || "AI Cursor Buddy Folder";
   const folderPath = uniqueDesktopPath(desktopDir, slugHuman(requestedName));
   const metadataPath = path.join(workspace, "desktop-folder.json");
   await mkdir(folderPath, { recursive: true });
@@ -668,7 +668,7 @@ function slugHuman(value) {
     .replace(/[/:\\]/g, "-")
     .replace(/\s+/g, " ")
     .slice(0, 64);
-  return clean || "Codex Cursor Folder";
+  return clean || "AI Cursor Buddy Folder";
 }
 
 function extractQuotedName(text) {
@@ -718,7 +718,7 @@ function buildPrompt(body, workspace) {
   }
 
   return `
-You are Codex running from Codex Cursor.
+You are Codex running from AI Cursor Buddy.
 
 The user is asking to make their current screen/workflow repeatable. Create a useful local artifact in this workspace:
 ${workspace}
@@ -788,9 +788,9 @@ General action profile:
   }[profile] || "";
 
   return `
-You are Codex running from Codex Cursor.
+You are Codex running from AI Cursor Buddy.
 
-Codex Cursor is a voice-and-screen companion. The user asked it to hand an action to Codex.
+AI Cursor Buddy is a voice-and-screen companion. The user asked it to hand an action to Codex.
 Work in this generated workspace only:
 ${workspace}
 

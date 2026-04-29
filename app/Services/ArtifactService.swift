@@ -53,7 +53,7 @@ struct ArtifactService {
     ) -> String {
         var sections: [String] = [
             "# \(title)",
-            "Generated from Codex Cursor screen analysis.",
+            "Generated from AI Cursor Buddy screen analysis.",
             "## Original Question\n\n\(prompt)",
             "## Mode\n\n\(mode.title)",
             "## Summary\n\n\(response.answer)"

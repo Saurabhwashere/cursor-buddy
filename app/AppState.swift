@@ -15,7 +15,7 @@ final class AppState: ObservableObject {
     @Published var latestCodexBridgeResult: CodexBridgeResult?
     @Published var isCodexTaskRunning = false
     @Published var errorMessage: String?
-    @Published var summonHint = "Press Option to ask Codex Cursor about the current screen."
+    @Published var summonHint = "Press Option to ask AI Cursor Buddy about the current screen."
     @Published var permissionStatuses: [PermissionStatus] = []
     @Published var pendingCodexActionOffer: String?
 
@@ -88,7 +88,7 @@ final class AppState: ObservableObject {
     }
 
     func summonBesideCursor() {
-        summonHint = "Ask one question. Codex will look at this screen and give the next step."
+        summonHint = "Ask one question. AI Cursor Buddy will look at this screen and give the next step."
         cursorCompanionController.showLabel(status: "Ask me")
 
         if prompt.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
@@ -97,7 +97,7 @@ final class AppState: ObservableObject {
 
         NSApp.activate(ignoringOtherApps: true)
 
-        guard let window = NSApp.windows.first(where: { $0.title == "Codex Cursor" }) ?? NSApp.windows.first else {
+        guard let window = NSApp.windows.first(where: { $0.title == "AI Cursor Buddy" }) ?? NSApp.windows.first else {
             return
         }
 
@@ -132,7 +132,7 @@ final class AppState: ObservableObject {
         speakingStateTask?.cancel()
         speakingStateTask = nil
         prompt = ""
-        summonHint = "Listening. Release Option to ask Codex about this screen."
+        summonHint = "Listening. Release Option to ask AI Cursor Buddy about this screen."
         cursorCompanionController.showAnswer(
             title: "Listening",
             text: "Speak now. Release Option when you're done.",
@@ -191,7 +191,7 @@ final class AppState: ObservableObject {
         }
 
         prompt = spokenPrompt
-        summonHint = "Got it. Codex is looking at the current screen."
+        summonHint = "Got it. AI Cursor Buddy is looking at the current screen."
         cursorCompanionController.showAnswer(
             title: "Got it",
             text: spokenPrompt,
@@ -572,7 +572,7 @@ final class AppState: ObservableObject {
     }
 
     private func hideCompanionWindowForScreenshot() -> NSWindow? {
-        let window = NSApp.windows.first(where: { $0.title == "Codex Cursor" && $0.isVisible })
+        let window = NSApp.windows.first(where: { $0.title == "AI Cursor Buddy" && $0.isVisible })
         window?.orderOut(nil)
         return window
     }

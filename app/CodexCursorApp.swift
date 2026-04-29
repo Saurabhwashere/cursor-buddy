@@ -6,7 +6,7 @@ struct CodexCursorApp: App {
     @StateObject private var appState = AppState()
 
     var body: some Scene {
-        WindowGroup("Codex Cursor") {
+        WindowGroup("AI Cursor Buddy") {
             CompanionPanel()
                 .environmentObject(appState)
                 .frame(minWidth: 460, idealWidth: 560, minHeight: 560)

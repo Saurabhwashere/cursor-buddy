@@ -11,7 +11,7 @@ struct CompanionPanel: View {
 
             VStack(alignment: .leading, spacing: 8) {
                 HStack {
-                    Text("Ask Codex")
+                    Text("Ask AI Buddy")
                         .font(.headline)
 
                     Spacer()
@@ -190,7 +190,7 @@ struct CompanionPanel: View {
 
     private var header: some View {
         VStack(alignment: .leading, spacing: 6) {
-            Text("Codex Cursor")
+            Text("AI Cursor Buddy")
                 .font(.largeTitle.bold())
 
             Text("Press Option anywhere. Ask one question. Get the next step.")
@@ -214,7 +214,7 @@ struct CompanionPanel: View {
                 .font(.caption)
             }
 
-            Text("Codex can guide you, but never say passwords, security codes, payment details, or private IDs aloud.")
+            Text("AI Cursor Buddy can guide you, but never say passwords, security codes, payment details, or private IDs aloud.")
                 .font(.caption)
                 .foregroundStyle(.secondary)
                 .fixedSize(horizontal: false, vertical: true)
