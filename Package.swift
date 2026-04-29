@@ -11,9 +11,16 @@ let package = Package(
         .executable(name: "CodexCursor", targets: ["CodexCursor"])
     ],
     targets: [
+        .target(
+            name: "AudioTapSupport",
+            path: "AudioTapSupport/Sources",
+            publicHeadersPath: "include"
+        ),
         .executableTarget(
             name: "CodexCursor",
-            path: "app"
+            dependencies: ["AudioTapSupport"],
+            path: "app",
+            swiftSettings: []
         )
     ]
 )

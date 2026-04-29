@@ -1,0 +1,20 @@
+{
+  "steps": [],
+  "profile": "mac",
+  "riskWarnings": [],
+  "screenshotPath": "/var/folders/8b/75kzt11n1q57v4gl6fxfrlqc0000gn/T/codex-cursor-latest-screen-D96763BA-29E6-43DD-81E3-5B77189032E9.jpg",
+  "instruction": "Can you take a screenshot of this and save it on my desk",
+  "prompt": "Can you take a screenshot of this and save it on my desk",
+  "answer": "",
+  "activeApplication": {
+    "name": "Firefox",
+    "bundleIdentifier": "org.mozilla.firefox"
+  },
+  "screen": {
+    "capturedWidth": 960,
+    "capturedHeight": 621,
+    "originalHeight": 2214,
+    "originalWidth": 3420
+  },
+  "mode": "action"
+}

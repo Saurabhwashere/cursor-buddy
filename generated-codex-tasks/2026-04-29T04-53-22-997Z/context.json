@@ -1,0 +1,18 @@
+{
+  "prompt": "Can you use code to download it",
+  "instruction": "Can you use code to download it",
+  "steps": [
+    "Click the “Copy Page” button on the right side of the page."
+  ],
+  "profile": "general",
+  "answer": "Use the code shown on the page to generate audio from text, then save the page you downloaded earlier to your Desktop. Next, click the “Copy Page” button so you have the content ready to paste or save.",
+  "riskWarnings": [],
+  "screen": {
+    "capturedHeight": 621,
+    "originalWidth": 3420,
+    "originalHeight": 2214,
+    "capturedWidth": 960
+  },
+  "mode": "action",
+  "screenshotPath": "/var/folders/8b/75kzt11n1q57v4gl6fxfrlqc0000gn/T/codex-cursor-latest-screen-585E69F0-7A2C-48D1-9762-DFCD0D56F3CC.jpg"
+}

@@ -1,0 +1,19 @@
+{
+  "instruction": "Download and save this page on my desktop",
+  "prompt": "Download and save this page on my desktop",
+  "screenshotPath": "/var/folders/8b/75kzt11n1q57v4gl6fxfrlqc0000gn/T/codex-cursor-latest-screen-BD1818AE-A012-48EC-96FD-5372C7CBBAF2.jpg",
+  "screen": {
+    "capturedHeight": 621,
+    "originalWidth": 3420,
+    "capturedWidth": 960,
+    "originalHeight": 2214
+  },
+  "mode": "action",
+  "profile": "browser",
+  "answer": "To save this page, use your browser’s Print dialog and save it as a PDF.",
+  "steps": [
+    "Press Command+P to open Print.",
+    "Choose “Save as PDF”, then click Save."
+  ],
+  "riskWarnings": []
+}

@@ -1,0 +1,19 @@
+{
+  "mode": "action",
+  "answer": "To save this page as a standalone HTML “index app,” start by copying the page so you can paste it into your own local index.html.",
+  "screenshotPath": "/var/folders/8b/75kzt11n1q57v4gl6fxfrlqc0000gn/T/codex-cursor-latest-screen-661060DC-C317-4A4B-91FF-BD457DD92E45.jpg",
+  "steps": [
+    "Click “Copy Page” in the page header area.",
+    "Paste it into your local index.html and then save it."
+  ],
+  "profile": "browser",
+  "prompt": "Can you save this page as an HTML index app use code expert",
+  "instruction": "Can you save this page as an HTML index app use code expert",
+  "riskWarnings": [],
+  "screen": {
+    "originalWidth": 3420,
+    "originalHeight": 2214,
+    "capturedWidth": 960,
+    "capturedHeight": 621
+  }
+}

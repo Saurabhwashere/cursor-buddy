@@ -86,6 +86,23 @@ struct CompanionPanel: View {
                 .disabled(appState.latestResponse == nil || appState.isLoading)
 
                 Button {
+                    Task {
+                        await appState.runCurrentPromptWithCodex()
+                    }
+                } label: {
+                    if appState.isCodexTaskRunning {
+                        HStack(spacing: 6) {
+                            ProgressView()
+                                .controlSize(.small)
+                            Text("Codex...")
+                        }
+                    } else {
+                        Text(appState.pendingCodexActionOffer == nil ? "Run with Codex" : "Use Codex")
+                    }
+                }
+                .disabled(appState.isCodexTaskRunning || appState.isLoading)
+
+                Button {
                     appState.makeLatestWorkflowRepeatable()
                 } label: {
                     if appState.isCodexTaskRunning {

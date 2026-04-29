@@ -40,6 +40,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/InteractionMemoryEntry.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/OverlayPoint.swift"
         },
         {
@@ -49,6 +53,10 @@
         {
           "kind" : "file",
           "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/ScreenAnalysisResponse.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/ActionRouter.swift"
         },
         {
           "kind" : "file",
@@ -73,6 +81,10 @@
         {
           "kind" : "file",
           "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/HotkeyMonitor.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/InteractionMemoryStore.swift"
         },
         {
           "kind" : "file",
@@ -120,6 +132,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/AudioTapSupport.build/AudioTapInstaller.m.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/sources"
         }
       ],
@@ -131,15 +147,18 @@
         "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CodexCursorApp.swift.o",
         "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CodexBridgeResult.swift.o",
         "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/GeneratedArtifact.swift.o",
+        "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/InteractionMemoryEntry.swift.o",
         "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/OverlayPoint.swift.o",
         "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/PermissionStatus.swift.o",
         "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ScreenAnalysisResponse.swift.o",
+        "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ActionRouter.swift.o",
         "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ArtifactService.swift.o",
         "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CodexBridgeClient.swift.o",
         "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CodexClient.swift.o",
         "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CoordinateMapper.swift.o",
         "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/CursorCompanionController.swift.o",
         "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/HotkeyMonitor.swift.o",
+        "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/InteractionMemoryStore.swift.o",
         "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/OverlayController.swift.o",
         "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/PermissionStatusService.swift.o",
         "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ScreenshotService.swift.o",
@@ -165,6 +184,12 @@
         "-DSWIFT_PACKAGE",
         "-DDEBUG",
         "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-Xcc",
+        "-fmodule-map-file=/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/AudioTapSupport.build/module.modulemap",
+        "-Xcc",
+        "-I",
+        "-Xcc",
+        "/Users/saurabhsingh/Desktop/codex-cursor/AudioTapSupport/Sources/include",
         "-module-cache-path",
         "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/ModuleCache",
         "-parseable-output",
@@ -221,6 +246,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/InteractionMemoryEntry.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/OverlayPoint.swift.o"
         },
         {
@@ -230,6 +259,10 @@
         {
           "kind" : "file",
           "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ScreenAnalysisResponse.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ActionRouter.swift.o"
         },
         {
           "kind" : "file",
@@ -254,6 +287,10 @@
         {
           "kind" : "file",
           "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/HotkeyMonitor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/InteractionMemoryStore.swift.o"
         },
         {
           "kind" : "file",
@@ -306,15 +343,18 @@
         "/Users/saurabhsingh/Desktop/codex-cursor/app/CodexCursorApp.swift",
         "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/CodexBridgeResult.swift",
         "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/GeneratedArtifact.swift",
+        "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/InteractionMemoryEntry.swift",
         "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/OverlayPoint.swift",
         "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/PermissionStatus.swift",
         "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/ScreenAnalysisResponse.swift",
+        "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/ActionRouter.swift",
         "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/ArtifactService.swift",
         "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/CodexBridgeClient.swift",
         "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/CodexClient.swift",
         "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/CoordinateMapper.swift",
         "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/CursorCompanionController.swift",
         "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/HotkeyMonitor.swift",
+        "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/InteractionMemoryStore.swift",
         "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/OverlayController.swift",
         "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/PermissionStatusService.swift",
         "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/ScreenshotService.swift",
@@ -345,15 +385,18 @@
       "/Users/saurabhsingh/Desktop/codex-cursor/app/CodexCursorApp.swift",
       "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/CodexBridgeResult.swift",
       "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/GeneratedArtifact.swift",
+      "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/InteractionMemoryEntry.swift",
       "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/OverlayPoint.swift",
       "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/PermissionStatus.swift",
       "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/ScreenAnalysisResponse.swift",
+      "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/ActionRouter.swift",
       "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/ArtifactService.swift",
       "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/CodexBridgeClient.swift",
       "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/CodexClient.swift",
       "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/CoordinateMapper.swift",
       "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/CursorCompanionController.swift",
       "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/HotkeyMonitor.swift",
+      "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/InteractionMemoryStore.swift",
       "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/OverlayController.swift",
       "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/PermissionStatusService.swift",
       "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/ScreenshotService.swift",
@@ -379,6 +422,12 @@
       "-DSWIFT_PACKAGE",
       "-DDEBUG",
       "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-Xcc",
+      "-fmodule-map-file=/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/AudioTapSupport.build/module.modulemap",
+      "-Xcc",
+      "-I",
+      "-Xcc",
+      "/Users/saurabhsingh/Desktop/codex-cursor/AudioTapSupport/Sources/include",
       "-module-cache-path",
       "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/ModuleCache",
       "-parseable-output",
@@ -419,8 +468,11 @@
     ]
   },
   "targetDependencyMap" : {
-    "CodexCursor" : [
+    "AudioTapSupport" : [
 
+    ],
+    "CodexCursor" : [
+      "AudioTapSupport"
     ]
   },
   "testDiscoveryCommands" : {
@@ -474,6 +526,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/InteractionMemoryEntry.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/OverlayPoint.swift"
         },
         {
@@ -483,6 +539,10 @@
         {
           "kind" : "file",
           "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/ScreenAnalysisResponse.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/ActionRouter.swift"
         },
         {
           "kind" : "file",
@@ -507,6 +567,10 @@
         {
           "kind" : "file",
           "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/HotkeyMonitor.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/InteractionMemoryStore.swift"
         },
         {
           "kind" : "file",
@@ -560,6 +624,14 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/AudioTapSupport.build/AudioTapInstaller.m.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ActionRouter.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/AppState.swift.o"
         },
         {
@@ -609,6 +681,14 @@
         {
           "kind" : "file",
           "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/HotkeyMonitor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/InteractionMemoryEntry.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/InteractionMemoryStore.swift.o"
         },
         {
           "kind" : "file",

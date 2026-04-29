@@ -1,4 +1,5 @@
 import AVFoundation
+import AudioTapSupport
 import Foundation
 import Speech
 
@@ -7,6 +8,7 @@ enum VoiceInputError: LocalizedError {
     case microphonePermissionDenied
     case recognizerUnavailable
     case audioInputUnavailable
+    case audioTapFailed(String)
 
     var errorDescription: String? {
         switch self {
@@ -18,6 +20,8 @@ enum VoiceInputError: LocalizedError {
             return "Speech recognition is not currently available."
         case .audioInputUnavailable:
             return "No microphone input is available."
+        case let .audioTapFailed(message):
+            return "Could not start microphone capture: \(message)"
         }
     }
 }
@@ -67,8 +71,13 @@ final class VoiceInputService {
         }
 
         inputNode.removeTap(onBus: 0)
-        inputNode.installTap(onBus: 0, bufferSize: 1024, format: format) { [weak self] buffer, _ in
-            self?.recognitionRequest?.append(buffer)
+        do {
+            try installInputTap(on: inputNode, format: format)
+        } catch {
+            recognitionRequest = nil
+            recognitionTask?.cancel()
+            recognitionTask = nil
+            throw error
         }
 
         audioEngine.prepare()
@@ -103,6 +112,33 @@ final class VoiceInputService {
         let microphoneGranted = await AVCaptureDevice.requestAccess(for: .audio)
         guard microphoneGranted else {
             throw VoiceInputError.microphonePermissionDenied
+        }
+    }
+
+    private func installInputTap(on inputNode: AVAudioInputNode, format: AVAudioFormat) throws {
+        do {
+            try AudioTapInstaller.installTap(
+                on: inputNode,
+                bufferSize: 1024,
+                format: format
+            ) { [weak self] buffer, _ in
+                self?.recognitionRequest?.append(buffer)
+            }
+            return
+        } catch {
+            inputNode.removeTap(onBus: 0)
+        }
+
+        do {
+            try AudioTapInstaller.installTap(
+                on: inputNode,
+                bufferSize: 1024,
+                format: nil
+            ) { [weak self] buffer, _ in
+                self?.recognitionRequest?.append(buffer)
+            }
+        } catch {
+            throw VoiceInputError.audioTapFailed(error.localizedDescription)
         }
     }
 }

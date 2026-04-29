@@ -1,0 +1,22 @@
+{
+  "profile": "general",
+  "answer": "I can’t directly save or download files for you from here, but you can do it in one click by using the browser’s “Save page as…” option.",
+  "screenshotPath": "/var/folders/8b/75kzt11n1q57v4gl6fxfrlqc0000gn/T/codex-cursor-latest-screen-4B7EE0DF-6678-4E9F-837D-5D3BC4344B44.jpg",
+  "mode": "action",
+  "steps": [
+    "Click the browser menu (⋯) in the top-right and choose “Save page as…”."
+  ],
+  "prompt": "Can you just do it for me",
+  "riskWarnings": [],
+  "screen": {
+    "capturedWidth": 960,
+    "capturedHeight": 621,
+    "originalHeight": 2214,
+    "originalWidth": 3420
+  },
+  "instruction": "Can you just do it for me",
+  "activeApplication": {
+    "bundleIdentifier": "com.codexcursor.prototype",
+    "name": "Codex Cursor"
+  }
+}

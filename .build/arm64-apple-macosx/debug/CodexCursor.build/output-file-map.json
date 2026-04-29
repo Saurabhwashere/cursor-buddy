@@ -30,6 +30,13 @@
     "swift-dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/GeneratedArtifact.swiftdeps",
     "diagnostics": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/GeneratedArtifact.dia"
   },
+  "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/InteractionMemoryEntry.swift": {
+    "dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/InteractionMemoryEntry.d",
+    "object": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/InteractionMemoryEntry.swift.o",
+    "swiftmodule": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/InteractionMemoryEntry~partial.swiftmodule",
+    "swift-dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/InteractionMemoryEntry.swiftdeps",
+    "diagnostics": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/InteractionMemoryEntry.dia"
+  },
   "/Users/saurabhsingh/Desktop/codex-cursor/app/Models/OverlayPoint.swift": {
     "dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/OverlayPoint.d",
     "object": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/OverlayPoint.swift.o",
@@ -50,6 +57,13 @@
     "swiftmodule": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ScreenAnalysisResponse~partial.swiftmodule",
     "swift-dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ScreenAnalysisResponse.swiftdeps",
     "diagnostics": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ScreenAnalysisResponse.dia"
+  },
+  "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/ActionRouter.swift": {
+    "dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ActionRouter.d",
+    "object": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ActionRouter.swift.o",
+    "swiftmodule": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ActionRouter~partial.swiftmodule",
+    "swift-dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ActionRouter.swiftdeps",
+    "diagnostics": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ActionRouter.dia"
   },
   "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/ArtifactService.swift": {
     "dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/ArtifactService.d",
@@ -92,6 +106,13 @@
     "swiftmodule": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/HotkeyMonitor~partial.swiftmodule",
     "swift-dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/HotkeyMonitor.swiftdeps",
     "diagnostics": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/HotkeyMonitor.dia"
+  },
+  "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/InteractionMemoryStore.swift": {
+    "dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/InteractionMemoryStore.d",
+    "object": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/InteractionMemoryStore.swift.o",
+    "swiftmodule": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/InteractionMemoryStore~partial.swiftmodule",
+    "swift-dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/InteractionMemoryStore.swiftdeps",
+    "diagnostics": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/InteractionMemoryStore.dia"
   },
   "/Users/saurabhsingh/Desktop/codex-cursor/app/Services/OverlayController.swift": {
     "dependencies": "/Users/saurabhsingh/Desktop/codex-cursor/.build/arm64-apple-macosx/debug/CodexCursor.build/OverlayController.d",

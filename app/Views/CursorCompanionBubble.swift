@@ -57,14 +57,27 @@ struct CursorCompanionBubble: View {
                 }
             }
 
-            Text(detailText.isEmpty ? "..." : detailText)
+            Text(displayDetailText)
                 .font(.system(size: 13, weight: .medium))
                 .foregroundStyle(.white.opacity(0.84))
-                .lineLimit(4)
+                .lineLimit(activity == .speaking ? 1 : 4)
                 .fixedSize(horizontal: false, vertical: true)
         }
-        .frame(width: 270, alignment: .leading)
+        .frame(width: activity == .speaking ? 112 : 270, alignment: .leading)
         .padding(.vertical, 3)
+    }
+
+    private var displayDetailText: String {
+        switch activity {
+        case .speaking:
+            return "Speaking..."
+        case .thinking:
+            return detailText.isEmpty ? "Thinking..." : detailText
+        case .listening:
+            return detailText.isEmpty ? "Listening..." : detailText
+        case .idle:
+            return detailText.isEmpty ? "Ready" : detailText
+        }
     }
 
     private var icon: some View {

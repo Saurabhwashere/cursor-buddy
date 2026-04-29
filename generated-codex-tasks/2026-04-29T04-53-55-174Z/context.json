@@ -1,0 +1,19 @@
+{
+  "riskWarnings": [],
+  "profile": "browser",
+  "mode": "action",
+  "answer": "I didn’t actually save anything for you—this page only lets you copy the content to your clipboard. Next, click the “Copy Page” button and then paste it into a file on your Desktop and save it.",
+  "instruction": "I don't see the downloaded page where did you save it",
+  "screenshotPath": "/var/folders/8b/75kzt11n1q57v4gl6fxfrlqc0000gn/T/codex-cursor-latest-screen-130E62FF-797A-424F-8A8A-375239E2B144.jpg",
+  "prompt": "I don't see the downloaded page where did you save it",
+  "steps": [
+    "Click the “Copy Page” button in the middle-right area.",
+    "Paste it into a text file (or document) and save it to your Desktop."
+  ],
+  "screen": {
+    "originalHeight": 2214,
+    "capturedHeight": 621,
+    "capturedWidth": 960,
+    "originalWidth": 3420
+  }
+}

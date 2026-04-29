@@ -18,7 +18,7 @@ Codex Cursor: Use the official login form on this page. Keep your password and s
 
 ## Run
 
-Start the optional Codex Bridge in one terminal if you want `Make Repeatable` to create local artifacts with Codex CLI:
+Start the optional Codex Bridge in one terminal if you want `Make Repeatable` or `Run with Codex` to create local artifacts with Codex CLI:
 
 ```bash
 ./scripts/run-bridge.sh
@@ -69,10 +69,71 @@ The panel shows status chips for API key, screen recording, microphone, and spee
 
 Privacy note: Codex can guide you, but never say passwords, security codes, payment details, or private IDs aloud.
 
+## Action Router
+
+Codex Cursor uses a deterministic local `ActionRouter` before it calls any model. This keeps cursor-side responses fast:
+
+```text
+voice transcript
+-> local route: memory, Mac action, Codex action, risk check, automation offer, or screen guidance
+-> run the smallest useful agent/action
+```
+
+Codex is only invoked for heavier work such as scripts, workflows, MCP scaffolds, and explicit `use Codex` requests. Low-risk Mac actions such as screenshots, URL copy, current-page info, and Finder reveal stay local.
+
 ## Codex Bridge
 
 The `Make Repeatable` button sends the latest screen prompt, answer, and screenshot path to a local bridge at `http://127.0.0.1:8765`.
 The bridge runs `codex exec` in a generated workspace under `generated-codex-tasks/` and asks Codex to create a safe reusable artifact such as a guide, script, helper app, or MCP server scaffold.
+
+`Run with Codex` sends the current prompt and screen directly to Codex as an action task. Voice commands that include phrases like `use Codex`, `run Codex`, or `ask Codex to` automatically use this path. The bridge tags action tasks with a profile such as `browser`, `mcp`, `files`, or `mac` so Codex can prepare the right artifact.
+
+Example:
+
+```text
+User: Use Codex to use browser control and print this page.
+Codex Cursor: Running Codex...
+Codex Bridge: creates a safe browser-control/print helper or runbook under generated-codex-tasks/<task-id>/.
+```
+
+Safety rule: Codex Cursor should prepare browser, print, submit, account, and OS-control actions, but it stops before irreversible final actions until the user confirms.
+
+One browser action is implemented as a real bridge action for demos:
+
+```text
+User: Use Codex to save this webpage to my desktop.
+Codex Cursor: saves the front Safari/Chrome/Edge/Brave page as an HTML file on Desktop.
+```
+
+If the page cannot be fetched directly, the bridge saves a `.webloc` shortcut on Desktop instead.
+
+One Mac action is also implemented as a real bridge action:
+
+```text
+User: Take a screenshot.
+Codex Cursor: saves a PNG screenshot to Desktop and remembers the path.
+```
+
+Other low-risk direct actions:
+
+```text
+User: What page am I on?
+Codex Cursor: reads the current browser title and URL.
+
+User: Copy this page URL.
+Codex Cursor: copies the current browser URL to the clipboard.
+
+User: Save this page as Markdown notes.
+Codex Cursor: saves a .md file on Desktop and remembers the path.
+
+User: Create a folder called "Receipts" on my Desktop.
+Codex Cursor: creates the Desktop folder and remembers the path.
+```
+
+Script/code creation requests such as `Create a Python script to scrape this page` are routed to Codex with the `files` profile so Codex creates the script in a generated workspace instead of trying to control the browser directly.
+
+Codex Cursor also keeps a small local task memory at `generated-tools/memory/interaction-memory.json`.
+This lets follow-ups such as `Where do I find it?`, `I can't see it`, `Did it work?`, `Open it`, and `Try again` refer to the last Codex action instead of starting a fresh screen-analysis answer.
 
 Bridge defaults:
 

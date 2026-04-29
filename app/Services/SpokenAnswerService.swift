@@ -43,6 +43,14 @@ final class SpokenAnswerService: NSObject, AVSpeechSynthesizerDelegate, AVAudioP
             return
         }
 
+        speak(text)
+    }
+
+    func speak(_ text: String) {
+        guard !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+            return
+        }
+
         stop()
 
         activeSpeechTask = Task { [weak self] in

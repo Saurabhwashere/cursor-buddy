@@ -1,0 +1,4 @@
+module AudioTapSupport {
+    umbrella "/Users/saurabhsingh/Desktop/codex-cursor/AudioTapSupport/Sources/include"
+    export *
+}
