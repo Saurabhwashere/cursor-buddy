@@ -107,8 +107,11 @@ struct PointerPoint: Codable, Identifiable, Equatable {
 
 struct CapturedScreenshot: Equatable {
     let fileURL: URL
-    let pngData: Data
+    let imageData: Data
+    let mimeType: String
     let width: Int
     let height: Int
+    let originalWidth: Int
+    let originalHeight: Int
     let scale: Double
 }

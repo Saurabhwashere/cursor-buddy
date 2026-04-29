@@ -24,10 +24,16 @@ Build and launch as a normal macOS app bundle:
 OPENAI_API_KEY=your_key ./scripts/run-app.sh
 ```
 
-By default, screen understanding uses `gpt-5.5`. For a faster/cheaper demo mode, override it with `gpt-5.4-mini`:
+By default, screen understanding uses `gpt-5.4-nano` for low latency. For stronger reasoning, override it with `gpt-5.5`:
 
 ```bash
-OPENAI_API_KEY=your_key OPENAI_MODEL=gpt-5.4-mini ./scripts/run-app.sh
+OPENAI_API_KEY=your_key OPENAI_MODEL=gpt-5.5 ./scripts/run-app.sh
+```
+
+Screenshots are downscaled to a max dimension of `1280px` and sent as JPEG for speed. You can tune this:
+
+```bash
+OPENAI_API_KEY=your_key CODEX_CURSOR_MAX_SCREENSHOT_DIMENSION=960 ./scripts/run-app.sh
 ```
 
 By default, spoken answers use the Realtime API with `gpt-realtime-1.5` and the `marin` voice. You can override the realtime voice/model:

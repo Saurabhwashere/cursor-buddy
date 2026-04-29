@@ -35,8 +35,8 @@ private struct VisualTargetSnapper {
     func snap(_ point: PointerPoint, in screenshot: CapturedScreenshot) -> PointerPoint {
         let label = point.label.lowercased()
         guard shouldSnapToFormField(label: label),
-              let image = NSImage(data: screenshot.pngData),
-              let bitmap = NSBitmapImageRep(data: screenshot.pngData) ?? image.representations.compactMap({ $0 as? NSBitmapImageRep }).first else {
+              let image = NSImage(data: screenshot.imageData),
+              let bitmap = NSBitmapImageRep(data: screenshot.imageData) ?? image.representations.compactMap({ $0 as? NSBitmapImageRep }).first else {
             return point
         }
 

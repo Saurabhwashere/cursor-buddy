@@ -28,7 +28,7 @@ struct CodexClient {
 
     init(
         apiKey: String? = ProcessInfo.processInfo.environment["OPENAI_API_KEY"],
-        model: String = ProcessInfo.processInfo.environment["OPENAI_MODEL"] ?? "gpt-5.5",
+        model: String = ProcessInfo.processInfo.environment["OPENAI_MODEL"] ?? "gpt-5.4-nano",
         session: URLSession = .shared
     ) {
         self.apiKey = apiKey
@@ -79,7 +79,7 @@ struct CodexClient {
         screenshot: CapturedScreenshot,
         recentContext: String
     ) -> [String: Any] {
-        let base64Image = screenshot.pngData.base64EncodedString()
+        let base64Image = screenshot.imageData.base64EncodedString()
         let contextText = recentContext.isEmpty ? "No previous turns in this session." : recentContext
 
         return [
@@ -100,13 +100,14 @@ struct CodexClient {
                             User question: \(prompt)
 
                             Screenshot dimensions: \(screenshot.width)x\(screenshot.height) pixels.
+                            Original display capture dimensions before compression: \(screenshot.originalWidth)x\(screenshot.originalHeight) pixels.
                             Return only the requested JSON object.
                             """
                         ],
                         [
                             "type": "input_image",
-                            "image_url": "data:image/png;base64,\(base64Image)",
-                            "detail": "high"
+                            "image_url": "data:\(screenshot.mimeType);base64,\(base64Image)",
+                            "detail": "low"
                         ]
                     ]
                 ]
@@ -259,7 +260,7 @@ struct CodexClient {
 
     Given a screenshot, recent session context, and the user's question:
     1. Explain only what matters right now in plain English.
-    2. Give one immediate next action by default. Use up to 3 short steps only if the user asks for a broader explanation.
+    2. Give one immediate next action by default. Use one short sentence where possible. Use up to 2 short steps only if the user asks for a broader explanation.
     3. If there is a visible target to click or inspect, identify one screen location to point at.
     4. Preserve continuity with the recent session context, especially when the user says "I did that", "what now", or similar.
 
